@@ -112,10 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4e207af015c4c058a355ab3ee95ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMinimum: -5
-  xMaximum: 5
-  gridWidth: 1
-  gridHeight: 1
+  gridWidth: 10
+  gridHeight: 10
 --- !u!4 &375001555
 Transform:
   m_ObjectHideFlags: 0
@@ -250,7 +248,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:

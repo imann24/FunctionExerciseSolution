@@ -26,12 +26,12 @@ public class CubeController : MonoBehaviour {
 		for (int x = 0; x < gridWidth; x++) {
 			for (int y = 0; y < gridHeight; y++) {
 				// Calls the CreateCubeAtPosition function
-				grid[x, y] = CreateCubeAtPosition(x - gridWidth / 2, y - gridHeight / 2, 0);
+				grid[x, y] = CreateCubeAtPosition(x - gridWidth / 2 + 0.5f, y - gridHeight / 2 + 1.5f, 0);
 			}
 		}
 	}
 
-	GameObject CreateCubeAtPosition (int x, int y, int z) {
+	GameObject CreateCubeAtPosition (float x, float y, float z) {
 		// Creates a cube
 		GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
