@@ -1,5 +1,5 @@
 ﻿/*
- * Author(s): Isaiah Mann, [Insert Your Name Here]
+ * Author(s): Isaiah Mann
  * Description: Creates an interactable grid of cubes
  */
 
@@ -41,8 +41,10 @@ public class CubeController : MonoBehaviour {
 		//Adds a script to make the cube clickable
 		cube.AddComponent<CubeBehaviour>().SetController(this, colorCount);
 
-		// TODO: Set the cube to the position (x, y, z)
+		// Sets the cubes position to equal the three floats passed in
+		cube.transform.position = new Vector3(x, y, z);
 
+		// Returns the cube that was just created
 		return cube;
 	}
 
@@ -61,8 +63,8 @@ public class CubeController : MonoBehaviour {
 			colors[4] = Color.blue;
 			colors[5] = Color.magenta;
 
-			// TODO: Instead of returning Color.black, return colorIndex in the Color[] colors
-			return Color.black;
+			// Returns the color at the matching index
+			return colors[colorIndex];
 		} else {
 			// Returns black if the color index is invalid
 			return Color.black;
@@ -71,7 +73,11 @@ public class CubeController : MonoBehaviour {
 
 	// Checks whether the cube should grow based on how many times it's been clicked 
 	public bool CubeShouldGrow (int clickCount) {
-		// TODO: If clickCount is greater than colorCount, return true instead of false
-		return false;
+		// Checks if the click count is larger than the colorCount
+		if (clickCount > colorCount) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
